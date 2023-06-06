@@ -11,7 +11,7 @@ public class PrincipalAluguel {
 	public PrincipalAluguel(){
 		int opc;
 		do{
-			System.out.println("\n\nMODELOS DE CARRO");
+			System.out.println("\n\nALUGAR");
 			System.out.println("1 - Alugar um Carro");
 			System.out.println("2 - Editar um Aluguel de Carro");
 			System.out.println("3 - Excluir um Aluguel de Carro");
@@ -93,7 +93,7 @@ public class PrincipalAluguel {
 
     private static void listarAlugueis() {
         System.out.println("\n\nLISTA DE ALUGUEÍS");
-        System.out.println("\n-----------------------");
+        System.out.println("\n\n-----------------------");
         List<Aluguel> alugueis = AluguelPersistencia.getAlugueis();
         for (Aluguel aluguel : alugueis) {
             System.out.println("ID: " + aluguel.getId());

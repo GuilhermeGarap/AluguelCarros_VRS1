@@ -1,5 +1,6 @@
 package br.edu.up.front;
 
+import java.util.List;
 import br.edu.up.entidades.Carro;
 import br.edu.up.persistencia.CarroPersistencia;
 
@@ -70,17 +71,16 @@ public class PrincipalCarro {
 	}
 	
 	private static void listarCarros() {
-		System.out.println("\n\nLISTAGEM DE MARCAS DE CARROS");
-		Carro objCarro = new Carro();
-		objCarro.setModelo(Console.readString("Informe uma parte do nome do modelo que deseja listar: "));
-		System.out.println("-------------------------------");
-		for(Carro item: CarroPersistencia.getCarros(objCarro)) {
-			System.out.println("ID: " + item.getId());
-			System.out.println("Modelo: " + item.getModelo());
-			System.out.println("Quantidade de carros disponíveis para aluguel: " + item.getUnidades());
-			System.out.println("Valor do aluguel por dia: " + item.getValorDia());
-			System.out.println("-------------------------------");
-		}
+	    System.out.println("\nLISTAGEM DE MARCAS DE CARROS");
+	    System.out.println("\n-------------------------------");
+	    List<Carro> carros = CarroPersistencia.getCarros();
+	    for (Carro carro : carros) {
+	        System.out.println("ID: " + carro.getId());
+	        System.out.println("Modelo: " + carro.getModelo());
+	        System.out.println("Quantidade de carros disponíveis para aluguel: " + carro.getUnidades());
+	        System.out.println("Valor do aluguel por dia: " + carro.getValorDia());
+	        System.out.println("-------------------------------");
+	    }
 	}
 	
 	private static void alterarCarro() {
